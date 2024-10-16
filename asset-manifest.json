@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/kovais/static/css/main.309e45cf.css",
+    "main.js": "/kovais/static/js/main.5c409f72.js",
+    "static/js/488.82b71c8e.chunk.js": "/kovais/static/js/488.82b71c8e.chunk.js",
+    "static/media/spa.jpg": "/kovais/static/media/spa.e63185d1514d8ed24f15.jpg",
+    "static/media/s6.jpg": "/kovais/static/media/s6.351c0411af514296554c.jpg",
+    "static/media/img (1).jpeg": "/kovais/static/media/img (1).d09d9ab1ed9a25e43b43.jpeg",
+    "static/media/img (2).jpeg": "/kovais/static/media/img (2).16aed5a0130d1a9cc24e.jpeg",
+    "static/media/img (4).jpeg": "/kovais/static/media/img (4).c209e9fe7627585b66bc.jpeg",
+    "static/media/img (3).jpeg": "/kovais/static/media/img (3).7761fdf71da936583190.jpeg",
+    "static/media/spas.webp": "/kovais/static/media/spas.7392a620fba7cc89916e.webp",
+    "static/media/s7.jpg": "/kovais/static/media/s7.3953963835f3ad951381.jpg",
+    "static/media/s8.jpg": "/kovais/static/media/s8.d0c8a20cd86d76c19df9.jpg",
+    "static/media/men1.jpeg": "/kovais/static/media/men1.1c1d1c6a0135471e6843.jpeg",
+    "static/media/spa.avif": "/kovais/static/media/spa.4ac090c214931831c143.avif",
+    "static/media/men2.jpeg": "/kovais/static/media/men2.a26b8e83e9e4231a7512.jpeg",
+    "static/media/men3.jpg": "/kovais/static/media/men3.04dbd827ec884189c4d8.jpg",
+    "static/media/pros4.jpg": "/kovais/static/media/pros4.617e11b48bdab7a1e05e.jpg",
+    "index.html": "/kovais/index.html",
+    "main.309e45cf.css.map": "/kovais/static/css/main.309e45cf.css.map",
+    "main.5c409f72.js.map": "/kovais/static/js/main.5c409f72.js.map",
+    "488.82b71c8e.chunk.js.map": "/kovais/static/js/488.82b71c8e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.309e45cf.css",
+    "static/js/main.5c409f72.js"
+  ]
+}
