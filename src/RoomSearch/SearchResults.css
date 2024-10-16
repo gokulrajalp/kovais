@@ -1,0 +1,41 @@
+.search-results-header {
+    background-color: #00308f; /* Blue background similar to the image */
+    padding: 10px 0;
+  }
+  
+  .search-results-header h5 {
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .search-results-header p {
+    margin: 0;
+  }
+  
+  .search-results-content {
+    padding: 20px;
+  }
+  
+  .search-results-header {
+    background-color: white;
+    color: white;
+    
+  }
+  
+  .search-results-content {
+    padding: 20px;
+  }
+  
+
+  .room-count-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .room-count {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  

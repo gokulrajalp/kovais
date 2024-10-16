@@ -1,0 +1,115 @@
+.gym-container {
+    padding: 20px;
+    background-color: #f4f7f6; /* Light background for a clean look */
+  }
+  
+  .carousel-section {
+    margin-bottom: 40px;
+  }
+  
+  h3 {
+    margin-top: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.8rem; /* Increase font size for headings */
+    color: #333; /* Darker color for better visibility */
+  }
+  
+  /* Gender, Age, and Price Cards Styling */
+  .selection-card {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    margin: 15px 0;
+  }
+  
+  .selection-card:hover {
+    transform: translateY(-10px); /* Lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  }
+  
+  .selection-card.selected {
+    border: 2px solid #28a745;
+    transform: scale(1.05); /* Subtle scale when selected */
+  }
+  
+  .selection-card img {
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 2px solid #28a745;
+  }
+  
+  .selection-card .card-body {
+    padding: 20px;
+  }
+  
+  .selection-card .card-title {
+    font-size: 1.2rem;
+    color: #28a745;
+    font-weight: bold;
+  }
+  
+  /* Environment Section Cards */
+  .env-card {
+    margin: 15px;
+    height: 220px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .env-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .env-card img {
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .text-center {
+    margin: 40px 0;
+  }
+  
+  button {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 30px;
+    background-color: #28a745;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #218838;
+    transform: scale(1.05); /* Lift the button on hover */
+  }
+  
+  button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  
+  button:disabled:hover {
+    transform: none; /* Disable hover effect for disabled button */
+  }
+  
+  @media (max-width: 768px) {
+    .selection-card,
+    .env-card {
+      margin-bottom: 20px;
+    }
+  
+    h3 {
+      font-size: 1.5rem; /* Smaller heading on smaller screens */
+    }
+  }

@@ -1,0 +1,719 @@
+:root {
+  --surface-color: #fff;
+  --curve: 40;
+  --primary-color: #007ad8;
+  --secondary-color: #ff4081;
+  --background-dark: #121212;
+  --background-light: #282c34;
+  --input-background: #333;
+  --input-border: #444;
+  --input-focus-border: #1a73e8;
+  --font-family: 'Arial', sans-serif;
+}
+
+
+body, p, h1, h2, h3, h4, h5, h6, a, span, div {
+  font-family: var(--font-family), sans-serif; /* Ensure sans-serif is applied */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+html, body {
+  /* Hide scrollbar in WebKit browsers (Chrome, Safari, Edge) */
+body::-webkit-scrollbar {
+  display: none; /* Hides scrollbar */
+} /* This will hide both scrollbars globally */
+  
+}
+
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+ font-family: var(--font-family);
+}
+
+.container,.loading h2, .company-name, .navbar a, .login-card h2, .description, .username, .card-button, .footer p, .hero-header, .hero-para {
+  font-family: var(--font-family); /* Sans-serif for all text elements */
+}
+
+.header, .navbar, .login-card, .profile-bar, .main-content, .nft-card, .footer {
+  font-family: var(--font-family); /* All content uses sans-serif */
+}
+
+/* Additional elements using sans-serif */
+.header .navbar a, .login-button, .toggle-button, .login-card button {
+  font-family: var(--font-family); /* Ensure buttons also use sans-serif */
+}
+
+.hero-header, .hero-para {
+  font-family: var(--font-family); /* Hero section text */
+}
+
+.profile-nav a, .profile-button, .card-button, .nft-card hr, .creator ins, .duration ins {
+  font-family: var(--font-family); /* Apply to other elements */
+}
+
+@media (max-width: 1200px), (max-width: 992px), (max-width: 768px), (max-width: 576px) {
+  .navbar a, .hero-header, .hero-para {
+    font-family: var(--font-family); /* Responsively apply sans-serif */
+  }
+}
+.hero{
+  height: 105vh;
+  margin-top: -105px;
+}
+
+.loader {
+  transform: rotateZ(45deg);
+  perspective: 1000px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  color: #fff;
+  position: relative;
+}
+
+.loader:before,
+.loader:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: spin 1s linear infinite;
+}
+
+.loader:after {
+  color: var(--secondary-color);
+  transform: rotateY(70deg);
+  animation-delay: .4s;
+}
+
+@keyframes spin {
+  0%, 100% {
+    box-shadow: .2em 0px 0 0px currentcolor;
+  }
+  12% {
+    box-shadow: .2em .2em 0 0 currentcolor;
+  }
+  25% {
+    box-shadow: 0 .2em 0 0px currentcolor;
+  }
+  37% {
+    box-shadow: -.2em .2em 0 0 currentcolor;
+  }
+  50% {
+    box-shadow: -.2em 0 0 0 currentcolor;
+  }
+  62% {
+    box-shadow: -.2em -.2em 0 0 currentcolor;
+  }
+  75% {
+    box-shadow: 0px -.2em 0 0 currentcolor;
+  }
+  87% {
+    box-shadow: .2em -.2em 0 0 currentcolor;
+  }
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #fff;
+}
+
+.loading h2 {
+  margin-top: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  color: black;
+  position: sticky;
+  width: 80vw;
+  margin-left: 150px;
+  margin-top: 10px;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 50px;
+  
+}
+
+.header .logo {
+  max-height: 40px;
+  border-radius: 100px;
+}
+
+.header .navbar a {
+  font-size: 0.9rem;
+  margin: 0 0.5rem;
+
+}
+
+.header .login-button {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.9rem;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 1rem;
+  border-radius: 100px;
+}
+
+.company-name {
+  font-size: 2rem;
+  font-weight: bolder;
+  font-family:'Montserrat',sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  
+}
+
+.navbar a {
+  font-size: 1.1rem !important;
+  margin: 0 0.75rem;
+  text-decoration: none;
+  padding: 10px 30px;
+  color: rgba(14, 14, 14, 0.8); /* Lighter text color */
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  border: none;
+  font-weight: 650; /* Bold weight */
+   /* Subtle text shadow */
+}
+
+.navbar a:hover {
+  /* Slight translucent background */
+  background: linear-gradient(to right, #8e2de2, #f39109);
+  
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Optional: Adjust the login button styling */
+.login-button {
+  background: #0c4d5f; /* Light primary color */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 1rem;
+}
+
+.login-button:hover {
+   background: linear-gradient(to right, #8e2de2, #f39109);
+  
+  /* -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  color: #fbf9f9;/* Darker primary color on hover */
+}
+
+/* Light Theme */
+.login-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(13, 1, 1, 0.852); /* Light semi-transparent background */
+  z-index: 1001;
+}
+
+.login-card {
+  background: #fff; /* Light background for the card */
+  border-radius: 20px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  color: #333; /* Darker text for better contrast */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1); /* Softer shadow for a light theme */
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: #333; /* Darker color for visibility */
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333; /* Darker text */
+}
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-card input {
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc; /* Lighter input border */
+  border-radius: 5px;
+  background-color: #f9f9f9; /* Light background for inputs */
+  color: #333; /* Darker input text */
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.login-card input:focus {
+  border-color: #888; /* Focused input border color */
+  outline: none;
+}
+
+.login-card button {
+  background: #0c4d5f; /* Primary button color (light green) */
+  color: #fff;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-card button:hover {
+  background: #7fddfa; /* Darker green on hover */
+  color: #121212;
+}
+
+.toggle-button {
+  width: 335px;
+  height: 43px;
+  background-color: #f0f0f0; /* Light background for toggle button */
+  color: #333; /* Dark text for the toggle */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.toggle-button:hover {
+  background-color: #e0e0e0; /* Slightly darker on hover */
+}
+
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5rem 2rem 2rem;
+  margin-top: 4rem;
+}
+
+.nft-card {
+  width: 300px;
+  max-width: 400px;
+  margin: 1rem;
+  border: 1px solid #ffffff22;
+  background: linear-gradient(0deg, var(--background-dark) 0%, var(--background-light) 100%);
+  box-shadow: 0 7px 20px 5px #00000088;
+  border-radius: .7rem;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  overflow: hidden;
+  transition: .5s all;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.nft-card:hover {
+  border: 1px solid #ffffff44;
+  box-shadow: 0 7px 50px 10px #000000aa;
+  transform: scale(1.02);
+  filter: brightness(1.2);
+}
+
+.nft-card hr {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #88888855;
+  margin-top: 0;
+}
+
+.tokenImage {
+  border-radius: .5rem;
+  max-width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.description {
+  margin: .5rem 0;
+  color: #a89ec9;
+}
+
+.tokenInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  color: #ee83e5;
+  font-weight: 700;
+}
+
+.price ins {
+  margin-left: -.3rem;
+  margin-right: .5rem;
+}
+
+.duration {
+  display: flex;
+  align-items: center;
+  color: #a89ec9;
+  margin-right: .2rem;
+}
+
+.duration ins {
+  margin: .5rem;
+  margin-bottom: .4rem;
+}
+
+.creator {
+  display: flex;
+  align-items: center;
+  margin-top: .2rem;
+  margin-bottom: .3rem;
+}
+
+.creator ins {
+  color: #a89ec9;
+  text-decoration: none;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ffffff22;
+  padding: .3rem;
+  margin: 0;
+  margin-right: .5rem;
+  border-radius: 100%;
+  box-shadow: inset 0 0 0 4px #000000aa;
+}
+
+.wrapper img {
+  border-radius: 100%;
+  border: 1px solid #ffffff22;
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover;
+  margin: 0;
+}
+
+/* Profile Bar Styling */
+.profile-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #f4f4f4;
+  border-radius: 50px;
+  border-bottom: 1px solid #ddd;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.username {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #1a73e8;
+  margin-right: 5px;
+}
+
+.profile-nav {
+  display: flex;
+  gap: 15px;
+}
+
+.profile-nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+.profile-button {
+  background-color: #ff6f61;
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 8px 16px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.profile-button:hover {
+  background-color: #e55b50;
+}
+
+
+.nft-card::before {
+  position: fixed;
+  content: "";
+  box-shadow: 0 0 100px 40px #ffffff08;
+  top: -10%;
+  left: -100%;
+  transform: rotate(-45deg);
+  height: 60rem;
+  transition: .7s all;
+}
+
+.nft-card:hover {
+  border: 1px solid #ffffff44;
+  box-shadow: 0 7px 50px 10px #000000aa;
+  transform: scale(1.02); /* Slightly less scaling for a subtle effect */
+  filter: brightness(1.2);
+}
+
+.nft-card:hover::before {
+  filter: brightness(.5);
+  top: -100%;
+  left: 200%;
+}
+
+/* Button styles */
+.card-button {
+  width: 90%; /* Make button width responsive to card width */
+  padding: 0.75rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 16px;
+  text-decoration: none;
+  margin-top: 1rem; /* Spacing from other elements */
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.card-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Footer Styling */
+.footer {
+  color: #adaaaa; /* White text color */
+  padding: 10px; /* Adjust padding as needed */
+  text-align: center;
+  position: fixed; /* Fixed position for watermark effect */
+  bottom: 0;
+  right: 0;
+  left: 100;
+  margin: 0;
+  opacity: 0.5; /* Slightly transparent for watermark effect */
+  z-index: 1000; /* Ensure it's on top of other content */
+  background: none; /* Remove background color */
+  box-shadow: none; /* Remove any potential shadow */
+}
+
+.footer p {
+  margin: 0; /* Remove margin for watermark effect */
+}
+
+.hero{
+ background: linear-gradient(135deg, #1c92d2, #f2fcfe);
+  width: 100vw;
+  
+}
+
+/* styles.css or your relevant CSS file */
+.hover-effect {
+  transition: transform 0.3s ease;
+}
+
+.hover-effect:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+.span-text{
+  background: linear-gradient(to right, #8e2de2, #4a00e0); /* Teal to Light Green */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+.hero-header{
+  margin-top: 170px;
+}
+.hero-para{
+  line-height: 2;
+  margin-top: 70px;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  color: black;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .header {
+    width: 90%;
+    padding: 0.5rem;
+    margin-left: 0;
+  }
+  
+  .hero-header {
+    margin-top: 100px;
+  }
+
+  .hero-para {
+    font-size: 1.2rem;
+    margin-top: 40px;
+  }
+
+  .nft-card {
+    width: 280px;
+    margin: 1rem 0.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .hero {
+    height: 90vh;
+  }
+
+  .main-content {
+    padding: 4rem 1rem 1rem;
+  }
+
+  .nft-card {
+    width: 250px;
+    margin: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar a {
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+
+  .main-content {
+    padding: 3rem 1rem;
+    flex-direction: column;
+  }
+
+  .nft-card {
+    width: 200px;
+  }
+
+  .hero-header {
+    font-size: 1.5rem;
+  }
+
+  .hero-para {
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar a {
+    padding: 10px;
+    margin: 0.5rem 0;
+  }
+
+  .main-content {
+    padding: 2rem 0.5rem;
+  }
+
+  .nft-card {
+    width: 180px;
+  }
+
+  .hero-header {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .hero-para {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .footer {
+    font-size: 0.8rem;
+  }
+}
+
